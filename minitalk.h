@@ -15,5 +15,7 @@
 
 # include "libft.h"
 # include <signal.h>
+#include <unistd.h>
+# include <stdio.h>
 
 # endif

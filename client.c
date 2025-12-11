@@ -12,7 +12,28 @@
 
 #include "minitalk.h"
 
-int	main()
+static void	send_string(int pid, char *str)
 {
-	ft_printf("It woks");
+	int	i;
+
+	i = 0;
+	
+}
+
+int	main(int argc, char **argv)
+{
+	int	server_pid;
+
+	if (argc != 3 || !ft_strlen(argv[2]))
+	{
+		ft_putstr_fd("Uso: ./client <PID_SERVER> <MENSAGEM>\n", 2);
+		return (1);
+	}
+	server_pid = ft_atoi(argv[1]);
+	if (server_pid <= 0)
+	{
+		ft_putstr_fd("Erro: PID inválido\n", 2);
+		return (1);
+	}
+	return (0);
 }
