@@ -6,13 +6,16 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:19:41 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/12/13 11:39:00 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/12/13 12:29:50 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	main(int argc, char **argv)
-{
-	int	server_pid;
-}
+// int	main(int argc, char **argv)
+// {
+// 	int	server_pid;
+
+// 	if (argc != 3)
+// 		return (0);
+// }
