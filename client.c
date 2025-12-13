@@ -6,16 +6,44 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:19:41 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/12/13 12:29:50 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/12/13 15:06:31 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-// int	main(int argc, char **argv)
-// {
-// 	int	server_pid;
+static void	send_char(int pid, char c)
+{
+	int	bit;
 
-// 	if (argc != 3)
-// 		return (0);
-// }
+	bit = 0;
+	while (bit < 8)
+	{
+		if (c & (1 << bit))
+			kill(pid, SIGUSR2);
+		else
+			kill(pid, SIGUSR1);
+		usleep(100);
+		bit++;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	int		server_pid;
+	char	*message;
+	
+	if (argc != 3 || !ft_strlen(argv[2]))
+	{
+		ft_putstr_fd("Error: ./cliente <PID> <STRING>\n", 2);
+		return (1);
+	}
+	server_pid = ft_atoi(argv[1]);
+	message = argv[2];
+	while (*message)
+	{
+		send_char(server_pid, *message);
+		message++;
+	}
+	return (0);
+}
