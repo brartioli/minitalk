@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:19:41 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/12/13 15:36:44 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/12/13 16:02:53 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	main(int argc, char **argv)
 	int		server_pid;
 	char	*message;
 
-	if (argc != 3 || !ft_strlen(argv[2]))
+	if (argc != 3)
 	{
-		ft_putstr_fd("Error: ./cliente <PID> <STRING>\n", 2);
+		ft_putstr_fd("Error: ./client <PID> <STRING>\n", 2);
 		return (1);
 	}
 	server_pid = ft_atoi(argv[1]);
@@ -45,5 +45,6 @@ int	main(int argc, char **argv)
 		send_char(server_pid, *message);
 		message++;
 	}
+	send_char(server_pid, '\0');
 	return (0);
 }
