@@ -6,11 +6,11 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 17:49:25 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/08/07 09:45:27 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/12/13 15:37:37 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

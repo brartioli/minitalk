@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 12:36:41 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/12/13 14:27:14 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/12/13 15:24:01 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	handle_signal(int sig)
 {
 	static int				bit_count = 0;
 	static unsigned char	current_char = 0;
-	
+
 	if (sig == SIGUSR2)
 		current_char |= (1 << bit_count);
 	bit_count++;
