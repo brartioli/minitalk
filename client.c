@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 19:19:41 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/12/13 16:02:53 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:28:30 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	send_char(int pid, char c)
 			kill(pid, SIGUSR2);
 		else
 			kill(pid, SIGUSR1);
-		usleep(100);
+		usleep(500);
 		bit++;
 	}
 }
