@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 12:36:41 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/12/13 15:24:01 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:10:13 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ static void	handle_signal(int sig)
 	bit_count++;
 	if (bit_count == 8)
 	{
-		write(1, &current_char, 1);
+		if (current_char == '\0')
+			write(1, "\n", 1);
+		else
+			write(1, &current_char, 1);
 		bit_count = 0;
 		current_char = 0;
 	}
